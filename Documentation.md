@@ -18,3 +18,11 @@
 
 ## User Stories V2 ???
 - En tant qu'utilisateur, je veux pouvoir ajouter des recettes de cocktails à mes favoris
+
+-----------------
+
+
+
+# Cliquez ici pour la [maquette](https://www.figma.com/file/iiiZNQBRcI2Bw79BkWrxFM/Untitled?node-id=0-1&t=5UWCwyJede2hKJe5-0)
+
+
