@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { Outlet } from 'react-router-dom'
+import { AppBar } from '@mui/material'
+import MiniDrawer from './Components/AppBar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,14 +11,7 @@ function App() {
   return (
     <div className="App">
       
-        <h1 className='text-3xl text-sky-400 font-bold underline'>TEST tailwind </h1>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      
+      <MiniDrawer/>
       <Outlet/>
     </div>
   )
