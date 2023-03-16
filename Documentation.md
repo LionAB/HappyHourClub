@@ -10,6 +10,7 @@
 - En tant qu'utilisateur, je veux pouvoir rechercher des recettes de cocktails par alcool
 - En tant qu'utilisateur, je veux pouvoir consulter les détails d'une recette de cocktail
 - En tant qu'utilisateur, je veux pouvoir rechercher des recettes de cocktails alcoholic/non-alcoholic
+- En tant qu'utilisateur, je veux pouvoir retrourner à la page d'accueil
 
 ----------------
 
