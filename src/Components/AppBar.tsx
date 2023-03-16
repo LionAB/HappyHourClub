@@ -21,6 +21,13 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import AddIcon from '@mui/icons-material/Add';
 import LogoutIcon from '@mui/icons-material/Logout';
+import HomeIcon from '@mui/icons-material/Home';
+import { LocalBar } from "@mui/icons-material";
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
+import SportsBarIcon from '@mui/icons-material/SportsBar';
+import CoffeeIcon from '@mui/icons-material/Coffee';
+import PunchIcon from "./Icons/PunchIcon";
+import ShakerIcon from "./Icons/ShakerIcon";
 
 const drawerWidth = 240;
 
@@ -107,85 +114,17 @@ export default function MiniDrawer() {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      {/* <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
+      
 
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerToggle}>
-            { open==true ? <ChevronLeftIcon/> : <AddIcon/>}
+            { open==true ?   <ChevronLeftIcon/> : <MenuIcon/>}
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          <ListItem key="Logout" disablePadding sx={{ display: 'block' }}>
+          <ListItem key="home" disablePadding sx={{ display: 'block' }}>
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -197,12 +136,141 @@ export default function MiniDrawer() {
                 mr: open ? 3 : 'auto',
                 justifyContent: 'center',
               }}>
-                <LogoutIcon />
+                <HomeIcon color="info"/>
+              </ListItemIcon>
+              <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <Divider/>
+        <List>
+        <ListItem key="cocktail" disablePadding sx={{ display: 'block' }}>
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <LocalBar />
+              </ListItemIcon>
+              <ListItemText primary="Cocktail" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        <ListItem key="softdrink" disablePadding sx={{ display: 'block' }}>
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <LocalDrinkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Softdrink" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key="beer" disablePadding sx={{ display: 'block' }}>
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <SportsBarIcon />
+              </ListItemIcon>
+              <ListItemText primary="Beers" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key="coffee" disablePadding sx={{ display: 'block' }}>
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <CoffeeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Coffee" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key="punch" disablePadding sx={{ display: 'block' }}>
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <PunchIcon className="ml-[-4px]" />
+              </ListItemIcon>
+              <ListItemText primary="Punchs" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem key="shaker" disablePadding sx={{ display: 'block' }}>
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <ShakerIcon className="ml-[-4px]"/>
+              </ListItemIcon>
+              <ListItemText primary="Shaker" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        </List>
+        
+    <Divider />
+        <div style={{ position: 'absolute', bottom: 10 ,width:"100%"}}>
+        <Divider />
+        <List>
+          <ListItem key="Logout" disablePadding >
+            <ListItemButton sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}>
+              <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                <LogoutIcon color="error" />
               </ListItemIcon>
               <ListItemText primary="Logout" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
         </List>
+  </div>
       </Drawer>
       </Box>);
     }
