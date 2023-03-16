@@ -6,7 +6,6 @@ import { AppBar } from '@mui/material'
 import MiniDrawer from './Components/AppBar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
