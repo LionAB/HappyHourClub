@@ -5,17 +5,25 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import './index.css'
 import LoginPage from './views/LoginPage';
+import HomePage from './views/HomePage';
 
 const router = createBrowserRouter([
-
   {
     path: "/",
     element:<LoginPage />,
   },
+  {
+    element: <App />,
+    children: [
+      {
+        path: "/home",
+        element: <HomePage />,
+      }
+    ],
+  }
 ]);
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    <App />
   </React.StrictMode>,
 )
