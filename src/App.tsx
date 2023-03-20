@@ -1,18 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import { Outlet } from 'react-router-dom'
-import { AppBar, Box } from '@mui/material'
-import MiniDrawer from './Components/AppBar'
+import AppRouter from './Router/AppRouter'
 
 function App() {
 
   return (
     <div className="App">
-      <Box>
-        <MiniDrawer/>
-        <Outlet/>
-      </Box>
+      <AppRouter/>
     </div>
   )
 }
