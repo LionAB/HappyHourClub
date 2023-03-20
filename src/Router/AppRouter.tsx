@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import WithNav from '../Components/WithNav'
-import WithoutNav from "../Components/WithoutNav";
+import WithNav from '../Components/Layout/WithNav'
+import WithoutNav from "../Components/Layout/WithoutNav";
 import HomePage from '../views/HomePage'
 import LoginPage from "../views/LoginPage";
 import NotFoundPage from '../views/NotFoundPage';
