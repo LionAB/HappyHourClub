@@ -1,6 +1,6 @@
 import React from'react';
 import "./CocktailCard.css"
-import Drinks from "../../Models/Drinks";
+import Drinks from "../../Models/Drink";
 
 
 export default function CocktailCard(props: {drink: Drinks | null}){
