@@ -15,9 +15,10 @@ export default function AppRouter() {
             <Route path="/404" element={<NotFoundPage/>} />
             <Route path="*" element={<Navigate  to="/404" />} />
           </Route>
-            <Route element={<ProtectedRoutes />}>//Si le user est connecté, on affiche le menu et certaines routes
-                <Route element={<WithNav />}>
-                        <Route path="/" element={<HomePage/>} />
+          <Route element={<ProtectedRoutes />}>
+            {/* //Si le user est connecté, on affiche le menu et certaines routes */}
+              <Route element={<WithNav />}>
+                      <Route path="/" element={<HomePage/>} />
                 </Route>
           </Route>
         </Routes>
