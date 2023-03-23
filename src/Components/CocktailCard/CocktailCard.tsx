@@ -1,17 +1,19 @@
 import React from'react';
 import "./CocktailCard.css"
+import Drinks from "../../Models/Drinks";
 
-export default function CocktailCard(){
+
+export default function CocktailCard(props: {drink: Drinks | null}){
+
+    const {drink} = props;
+
     return(
-        <div className="card-container">
+        <div key={drink?.id} className="card-container">
             <div className="card-image">
-                <img src="https://i.imgflip.com/7eplof.jpg" />
+                <img src={drink?.image}/>
             </div>
             <div className="cocktail-card-title">
-                <h1>CocktailCard</h1>
-            </div>
-            <div className="card-cocktail-description">
-                <p>Blublubblublu bblubblulubbbublbu bubbubl bubblubublub</p>
+                <h1>{drink?.title}</h1>
             </div>
         </div>
     )
