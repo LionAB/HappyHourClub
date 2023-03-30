@@ -21,6 +21,8 @@ import CoffeeIcon from '@mui/icons-material/Coffee';
 import PunchIcon from "../assets/Icons/PunchIcon";
 import ShakerIcon from "../assets/Icons/ShakerIcon";
 
+import { Link } from "react-router-dom";
+
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -106,8 +108,6 @@ export default function MiniDrawer() {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      
-
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerToggle}>
@@ -117,6 +117,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           <ListItem key="home" disablePadding sx={{ display: 'block' }}>
+            <Link to="/">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -132,11 +133,13 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
         </List>
         <Divider/>
         <List>
         <ListItem key="cocktail" disablePadding sx={{ display: 'block' }}>
+        <Link to="/alcoholic">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -152,8 +155,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Cocktail" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
         <ListItem key="softdrink" disablePadding sx={{ display: 'block' }}>
+        <Link to="/non-alcoholic">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -169,8 +174,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Softdrink" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
           <ListItem key="beer" disablePadding sx={{ display: 'block' }}>
+          <Link to="/beer">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -186,8 +193,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Beers" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
           <ListItem key="coffee" disablePadding sx={{ display: 'block' }}>
+          <Link to="/coffee">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -203,8 +212,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Coffee" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
           <ListItem key="punch" disablePadding sx={{ display: 'block' }}>
+            <Link to="/punch">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -220,8 +231,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Punchs" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
           <ListItem key="shaker" disablePadding sx={{ display: 'block' }}>
+            <Link to="/shaker">
             <ListItemButton sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
@@ -237,6 +250,7 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Shaker" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
+            </Link>
           </ListItem>
         </List>
         

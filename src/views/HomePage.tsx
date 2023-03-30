@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 import CocktailCard from "../Components/CocktailCard/CocktailCard";
 import Drink from "../Models/Drink";
 
 export default function HomePage() {
+
 
     const [drinks,setDrinks]= useState<Drink[]|null>(null);
     

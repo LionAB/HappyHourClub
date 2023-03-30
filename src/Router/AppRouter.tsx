@@ -18,8 +18,15 @@ export default function AppRouter() {
           <Route element={<ProtectedRoutes />}>
             {/* //Si le user est connecté, on affiche le menu et certaines routes */}
               <Route element={<WithNav />}>
-                      <Route path="/" element={<HomePage/>} />
-                </Route>
+                      <Route path="/" element={<HomePage/>}>
+                        <Route path="alcoholic" element={<HomePage/>} />
+                        <Route path="non-alcoholic" element={<HomePage/>} />
+                        <Route path="beer" element={<HomePage/>} />
+                        <Route path="coffee" element={<HomePage/>} />
+                        <Route path="punch" element={<HomePage/>} />
+                        <Route path="shaker" element={<HomePage/>} />
+                      </Route>
+              </Route>
           </Route>
         </Routes>
     )
