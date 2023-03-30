@@ -7,7 +7,6 @@ import NotFoundPage from '../views/NotFoundPage';
 import ProtectedRoutes from "./ProtectedRoutes";
 
 export default function AppRouter() {
-    const isLogged = true;
     return(
         <Routes>
           <Route element={<WithoutNav />}>

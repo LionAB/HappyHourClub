@@ -4,7 +4,7 @@ import { useNavigate,useLocation } from 'react-router-dom';
 export default function NotFound() {
     const navigate=useNavigate();
     const location=useLocation();
-    console.warn(location);
+    //console.warn(location);
     const isConnected=true; // a remplacer par un state global user
     const handleClick=()=>{
         // navigate(-1); va à la page précedente

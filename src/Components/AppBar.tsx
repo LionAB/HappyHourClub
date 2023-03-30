@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -20,6 +20,7 @@ import SportsBarIcon from '@mui/icons-material/SportsBar';
 import CoffeeIcon from '@mui/icons-material/Coffee';
 import PunchIcon from "../assets/Icons/PunchIcon";
 import ShakerIcon from "../assets/Icons/ShakerIcon";
+import UserContext from "../hooks/Context/UserContext";
 
 const drawerWidth = 240;
 
@@ -95,6 +96,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const {logout} = useContext(UserContext);
 
   const handleDrawerToggle = () => {
     if (open) {
@@ -102,6 +104,9 @@ export default function MiniDrawer() {
     } else {
     setOpen(true);
   }
+  };
+  const handleLogout = () => {
+    logout();
   };
 
   return (
@@ -245,7 +250,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           <ListItem key="Logout" disablePadding >
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=>handleLogout()}  sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,

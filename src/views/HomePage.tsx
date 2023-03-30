@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import CocktailCard from "../Components/CocktailCard/CocktailCard";
+import UserContext from "../hooks/Context/UserContext";
 import Drink from "../Models/Drink";
 
 export default function HomePage() {
 
     const [drinks,setDrinks]= useState<Drink[]|null>(null);
-    
+    const { login } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     // Gets the data from thecocktaildb api and adapt it to our model
     useEffect(() => {
+      
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
           .then((res) => res.json())
           .then((data) => {
@@ -20,6 +23,10 @@ export default function HomePage() {
             setDrinks(drinksApiData);
           });
       }, []);
+
+      useEffect(() => {
+        console.warn("user :",user);
+      }, [user]);
 
     return (
         <div id="home">

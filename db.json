@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+        "id": 1,
+        "username": "user1",
+        "email": "user1@mail",
+        "islogged": false
+
+    },
+    {
+        "id": 2,
+        "username": "Jane",
+        "email": "user2@mail",
+        "islogged": false
+        
+    },
+    {
+        "id": 3,
+        "username": "Leo",
+        "email": "user3@mail",
+        "islogged": false
+    },
+    {
+        "id": 4,
+        "username": "Jane",
+        "email": "user4@mail",
+        "islogged": false
+    }
+  ]
+
+}
