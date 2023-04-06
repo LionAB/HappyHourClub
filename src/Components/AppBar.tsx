@@ -21,6 +21,7 @@ import CoffeeIcon from '@mui/icons-material/Coffee';
 import PunchIcon from "../assets/Icons/PunchIcon";
 import ShakerIcon from "../assets/Icons/ShakerIcon";
 import UserContext from "../hooks/Context/UserContext";
+import DrinkContext from "../hooks/Context/DrinkContext";
 
 const drawerWidth = 240;
 
@@ -97,6 +98,7 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const {logout} = useContext(UserContext);
+  const {fetchAlcoholic} = useContext(DrinkContext);
 
   const handleDrawerToggle = () => {
     if (open) {
@@ -107,6 +109,10 @@ export default function MiniDrawer() {
   };
   const handleLogout = () => {
     logout();
+  };
+
+  const handleHome = () => {
+    fetchAlcoholic();
   };
 
   return (
@@ -122,7 +128,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           <ListItem key="home" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=>handleHome()} sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
