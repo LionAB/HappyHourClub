@@ -98,7 +98,13 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const {logout} = useContext(UserContext);
+  
   const {fetchAlcoholic} = useContext(DrinkContext);
+  const {fetchNonAlcoholic} = useContext(DrinkContext);
+  const {fetchBeer} = useContext(DrinkContext);
+  const {fetchCoffee} = useContext(DrinkContext);
+  const {fetchPunch} = useContext(DrinkContext);
+  const {fetchShaker} = useContext(DrinkContext);
 
   const handleDrawerToggle = () => {
     if (open) {
@@ -115,6 +121,29 @@ export default function MiniDrawer() {
     fetchAlcoholic();
   };
 
+  const handleAlcoholic = () => {
+    fetchAlcoholic();
+  };
+
+  const handleNonAlcoholic = () => {
+    fetchNonAlcoholic();
+  };
+
+  const handleBeer = () => {
+    fetchBeer();
+  };
+
+  const handleCoffee = () => {
+    fetchCoffee();
+  };
+
+  const handlePunch = () => {
+    fetchPunch();
+  };
+
+  const handleShaker = () => {
+    fetchShaker();
+  };
   return (
     <Box sx={{ display: 'flex' }}>
       
@@ -148,7 +177,7 @@ export default function MiniDrawer() {
         <Divider/>
         <List>
         <ListItem key="cocktail" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event) => handleAlcoholic() } sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
@@ -165,7 +194,7 @@ export default function MiniDrawer() {
             </ListItemButton>
           </ListItem>
         <ListItem key="softdrink" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=> handleNonAlcoholic()} sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
@@ -182,7 +211,7 @@ export default function MiniDrawer() {
             </ListItemButton>
           </ListItem>
           <ListItem key="beer" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=> handleBeer()} sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
@@ -199,7 +228,7 @@ export default function MiniDrawer() {
             </ListItemButton>
           </ListItem>
           <ListItem key="coffee" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=> handleCoffee()} sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
@@ -216,7 +245,7 @@ export default function MiniDrawer() {
             </ListItemButton>
           </ListItem>
           <ListItem key="punch" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=> handlePunch()} sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
@@ -233,7 +262,7 @@ export default function MiniDrawer() {
             </ListItemButton>
           </ListItem>
           <ListItem key="shaker" disablePadding sx={{ display: 'block' }}>
-            <ListItemButton sx={{
+            <ListItemButton onClick={(event)=>handleShaker()} sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
