@@ -6,5 +6,6 @@ export type DrinkContestType = {
     fetchCoffee: () => void;
     fetchPunch: () => void;
     fetchShaker: () => void;
+    fetchDrinkSearch: (searchInput: string) => void;
     drinks: Drink[];
 };

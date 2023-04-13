@@ -95,6 +95,21 @@ export const DrinkProvider: React.FC<{ children?: React.ReactElement | React.Rea
         }
     }
 
+/********************************************************************************/
+
+    const fetchDrinkSearch = async (searchInput: string) => {
+        try {
+            const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`);
+            
+            const drinksApiData = await mapDrinkApiData(response);
+
+            setDrinks(drinksApiData);
+
+        } catch (error) {
+            console.error('Unable to fetch drinks', error);
+        }
+    }
+
     return (
         <DrinkContext.Provider value={{
             drinks, 
@@ -103,7 +118,8 @@ export const DrinkProvider: React.FC<{ children?: React.ReactElement | React.Rea
             fetchBeer,
             fetchCoffee, 
             fetchPunch,
-            fetchShaker
+            fetchShaker,
+            fetchDrinkSearch
         }}>
             {props.children}
         </DrinkContext.Provider>
