@@ -17,11 +17,8 @@ export const UserProvider: React.FC<{ children?:React.ReactElement | React.React
       try {
         const response = await axios.get(`http://localhost:3000/users?email=${email}`);
         const data = response.data;
-          const user = data[0];
-         
+          const user = data[0]; 
         if (user) {
-         /*  console.log('User found', user);
-          console.log('condition',user.username===username,user,username); */
           if(user.username===username){
             user.islogged = true;
             let userobj:User={

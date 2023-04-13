@@ -22,6 +22,7 @@ import PunchIcon from "../assets/Icons/PunchIcon";
 import ShakerIcon from "../assets/Icons/ShakerIcon";
 import UserContext from "../hooks/Context/UserContext";
 import DrinkContext from "../hooks/Context/DrinkContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -119,6 +120,7 @@ export default function MiniDrawer() {
 
   const handleHome = () => {
     fetchAlcoholic();
+    navigate("/");
   };
 
   const handleAlcoholic = () => {
