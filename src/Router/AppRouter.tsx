@@ -1,9 +1,11 @@
+import { Receipt } from "@mui/icons-material";
 import { Route, Routes ,Navigate} from "react-router-dom";
 import WithNav from '../Components/Layout/WithNav'
 import WithoutNav from "../Components/Layout/WithoutNav";
 import HomePage from '../views/HomePage'
 import LoginPage from "../views/LoginPage";
 import NotFoundPage from '../views/NotFoundPage';
+import RecipePage from "../views/RecipePage";
 import ProtectedRoutes from "./ProtectedRoutes";
 
 export default function AppRouter() {
@@ -18,7 +20,8 @@ export default function AppRouter() {
             {/* //Si le user est connecté, on affiche le menu et certaines routes */}
               <Route element={<WithNav />}>
                       <Route path="/" element={<HomePage/>} />
-                </Route>
+                      <Route path="/recipe" element={<RecipePage/>}/>
+              </Route>
           </Route>
         </Routes>
     )
