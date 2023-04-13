@@ -22,6 +22,7 @@ import PunchIcon from "../assets/Icons/PunchIcon";
 import ShakerIcon from "../assets/Icons/ShakerIcon";
 import UserContext from "../hooks/Context/UserContext";
 import DrinkContext from "../hooks/Context/DrinkContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -99,6 +100,7 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   const {logout} = useContext(UserContext);
   const {fetchAlcoholic} = useContext(DrinkContext);
+  const navigate= useNavigate();
 
   const handleDrawerToggle = () => {
     if (open) {
@@ -113,6 +115,7 @@ export default function MiniDrawer() {
 
   const handleHome = () => {
     fetchAlcoholic();
+    navigate("/");
   };
 
   return (

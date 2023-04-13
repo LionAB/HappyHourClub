@@ -7,7 +7,7 @@ import UserContext from "../hooks/Context/UserContext";
 
 export default function ProtectedRoutes(props: any) {
     const { isAuth } = useContext(UserContext);
-
+    const [testAuth,setTestAuth]= useState<boolean>(false);
 
     useEffect(() => {
         console.warn("isAuth",isAuth);
