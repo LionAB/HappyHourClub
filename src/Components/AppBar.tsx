@@ -99,6 +99,7 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const {logout} = useContext(UserContext);
+  const navigate = useNavigate();
   
   const {fetchAlcoholic} = useContext(DrinkContext);
   const {fetchNonAlcoholic} = useContext(DrinkContext);
