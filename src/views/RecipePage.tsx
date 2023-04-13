@@ -55,7 +55,7 @@ L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit
                             marginLeft: '1rem',
                             marginRight: '1rem',
                         }}>
-                            <img src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"/>
+                            <img className="m-auto h-auto w-auto" src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"/>
                         </Box>
                         </Box>
                 </Grid>
