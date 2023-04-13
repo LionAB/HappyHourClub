@@ -1,4 +1,5 @@
 import DrinkRecipes from "../Models/DrinkRecipes";
 export type RecipeContextType={
-    fetchDrinkById:()=>void;
+    fetchDrinkById:(id:string)=>void;
+    recipe:DrinkRecipes[];
 };

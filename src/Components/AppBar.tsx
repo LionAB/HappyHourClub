@@ -106,7 +106,7 @@ export default function MiniDrawer() {
   const {fetchCoffee} = useContext(DrinkContext);
   const {fetchPunch} = useContext(DrinkContext);
   const {fetchShaker} = useContext(DrinkContext);
-
+  const navigate= useNavigate();
   const handleDrawerToggle = () => {
     if (open) {
       setOpen(false);
@@ -125,26 +125,32 @@ export default function MiniDrawer() {
 
   const handleAlcoholic = () => {
     fetchAlcoholic();
+    navigate("/");
   };
 
   const handleNonAlcoholic = () => {
     fetchNonAlcoholic();
+    navigate("/");
   };
 
   const handleBeer = () => {
     fetchBeer();
+    navigate("/");
   };
 
   const handleCoffee = () => {
     fetchCoffee();
+    navigate("/");
   };
 
   const handlePunch = () => {
     fetchPunch();
+    navigate("/");
   };
 
   const handleShaker = () => {
     fetchShaker();
+    navigate("/");
   };
   return (
     <Box sx={{ display: 'flex' }}>

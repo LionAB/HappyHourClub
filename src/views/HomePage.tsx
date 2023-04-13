@@ -47,14 +47,15 @@ export default function HomePage() {
         <div id="home">
             <h1 className="text-3xl text-sky-400 font-bold underline">Home Page</h1>
             <div><Link to="/recipe">Navigate to Recipe</Link></div>
-            <>
+            
+            <div className="card-layout">
             {drinks?.map((mydrink)=>(
                 <CocktailCard 
                 key={mydrink.id}
                 drink={mydrink}
                 />
             ))}
-            </>
+            </div>
         </div>
     );
 }
