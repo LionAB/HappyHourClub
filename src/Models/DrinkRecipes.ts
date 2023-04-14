@@ -7,6 +7,4 @@ export default interface DrinkRecipes {
     instructions: string;
     image: string;
     ingredients: string[];
-    measures: string[];
-
 }

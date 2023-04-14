@@ -1,8 +1,9 @@
-import { Box,Grid } from "@mui/material";
-import Drinks from "../../Models/Drink";
+import { Box,Grid,Paper } from "@mui/material";
+import DrinkRecipes from "../../Models/DrinkRecipes";
 
-export default function Recipe(props: { drink: Drinks | null }) {
-    const { drink } = props;
+
+export default function Recipe(props: { recipe:DrinkRecipes | null }) {
+        const { recipe } = props;
 
     return(
         <Box sx={{ flexGrow: 1,
@@ -10,7 +11,7 @@ export default function Recipe(props: { drink: Drinks | null }) {
             <div id="recipe" className="ml-11">
                 <Grid container spacing={2} columns={12} justifyContent="space-between" flexWrap="wrap-reverse" >
                     <Grid item xs={12} md={7}>
-                        <Box className="bg-sky-500" sx={{
+                        <Box className="" sx={{
                             height: '90vh',
                             width: '100%',
                             display: 'flex',
@@ -18,46 +19,49 @@ export default function Recipe(props: { drink: Drinks | null }) {
                             justifyContent: 'center'
                           
                         }}>
-                            <h2>Ingredients</h2>
-                            <Box className="bg-sky-100" sx={{height:'45%',margin:'1rem',overflow: "hidden",
-              overflowY: "scroll",}}>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-    
-              L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-    
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-    
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).</Box>
-                        <h2>Instructions</h2>
-                            <Box className="bg-red-500" sx={{height:'45%',margin:'1rem',overflow: "hidden",
-              overflowY: "scroll",}}>Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-    
-              L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-    
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-    
-    L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).</Box>
+                            <h2 className="pl-6 text-4xl text-left">Informations</h2>
+                            <Paper elevation={3} className="bg-amber-200 text-left" sx={{height:'45%',padding:'1rem',margin:'1rem',overflow: "hidden",overflowY: "scroll",}}>
+                <h3><b>Glass</b></h3>
+                {recipe?.glass}
+                <h3 className="mt-1 text-left"><b>Ingredient</b></h3>
+                <ul className="pl-16 list-disc">
+                {recipe?.ingredients.map(
+                    (ingredient, index) =>
+                        ingredient && <li key={index}>{ingredient}</li>
+                )}
+                </ul>
+                
+                    
+              </Paper>
+                        <h2 className="mt-1  pl-6 text-4xl text-left">Instructions</h2>
+                            <Paper elevation={3} className="text-left" sx={{height:'45%',margin:'1rem',overflow: "hidden",overflowY: "scroll",padding:"1rem"
+                        }}>{recipe?.instructions}</Paper>
                         </Box>
     
                     </Grid>
                     <Grid item xs={12} md={5}>
-                        <Box className="bg-violet-600" sx={{
+                        <Paper className="bg-violet-600 " sx={{
                             height: '90vh',
                             width: '100%',
                             display: 'flex',
                             flexDirection: 'column',
+
     
                            
                         }}
                         >
-                            <h1 className="text-2xl text-white mt-16 mb-16">Drink.name</h1>
-                            <Box className="bg-red-500" sx={{
+                            <h1 className=" mt-16"><b>{recipe?.title}</b></h1>
+                            <h3><b>Category : {recipe?.category}</b> </h3>
+                            
+                            <Box className="mx-auto mt-16" sx={{
                                 height: '50%',
-                                marginLeft: '1rem',
-                                marginRight: '1rem',
+                               
+                                
                             }}>
-                                <img src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"/>
+                                <img className="w-auto h-[450px] rounded-4xl" src={recipe?.image}/>
                             </Box>
-                            </Box>
+                            
+                            </Paper>
                     </Grid>
                     </Grid>
                     
