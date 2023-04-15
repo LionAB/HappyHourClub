@@ -20,10 +20,10 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
                           
                         }}>
                             <h2 className="pl-6 text-4xl text-left">Informations</h2>
-                            <Paper elevation={3} className="bg-amber-200 text-left" sx={{height:'45%',padding:'1rem',margin:'1rem',overflow: "hidden",overflowY: "scroll",}}>
+                            <Paper elevation={3} className=" text-left" sx={{height:'45%',padding:'1rem',margin:'1rem',overflow: "hidden",overflowY: "scroll",backgroundColor:'#f7e4c3'}}>
                 <h3><b>Glass</b></h3>
                 {recipe?.glass}
-                <h3 className="mt-1 text-left"><b>Ingredient</b></h3>
+                <h3 className="mt-1 text-left"><b>Ingredients</b></h3>
                 <ul className="pl-16 list-disc">
                 {recipe?.ingredients.map(
                     (ingredient, index) =>

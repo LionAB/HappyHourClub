@@ -19,17 +19,16 @@
 }
 .card-layout {
   display: flex;
-
+  margin-left: 5rem;
   /* Put a card in the next row when previous cards take all width */
   flex-wrap: wrap;
-  gap:1rem;
-  margin-left: -0.25rem;
-  margin-right: -0.25rem;
-  flex-direction: column;
+  gap:10px;
+ 
+
 }
 .card-layout__item {
   /* There will be 4 cards per row */
-  flex-basis: 23.5%;
+  
 
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -55,4 +54,7 @@
 
 .read-the-docs {
   color: #888;
+}
+.paper-recipe{
+  background-color: #fff5e3;
 }
