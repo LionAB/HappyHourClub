@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TextField, FormControl, Button } from "@mui/material";
-import UserContext from "../hooks/Context/UserContext";
+import UserContext from "../../hooks/Context/UserContext";
+import "./LoginPage.css"
+import { red } from "@mui/material/colors";
 
 export default function LoginPage() {
     const {user} =useContext(UserContext);
@@ -34,8 +36,11 @@ export default function LoginPage() {
     return ( 
         <React.Fragment>
             <div className="bg-white">
+            <div className="login-image">
+                <img className="image-login" src="../src/assets/images/gens-qui-trinquent.jpg"/>
+            </div>
         <form autoComplete="off" onSubmit={handleSubmit}>
-            <h2>Login Form</h2>
+
                 
                  <TextField 
                     label="Username"
@@ -61,7 +66,11 @@ export default function LoginPage() {
                     value={email}
                     error={emailError}
                  />
-                 <Button variant="outlined" color="secondary" type="submit">Login</Button>
+                 <Button variant="outlined" 
+                         color="secondary" 
+                         type="submit" 
+                         sx={{ color: 'white', backgroundColor: 'black' }}
+                         >Login</Button>
              
         </form>
         </div>
