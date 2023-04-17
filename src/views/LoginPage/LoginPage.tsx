@@ -40,6 +40,7 @@ export default function LoginPage() {
                 <img className="image-login" src="../src/assets/images/gens-qui-trinquent.jpg"/>
             </div>
         <form autoComplete="off" onSubmit={handleSubmit}>
+            <img className="logo-login" src="../src/assets/images/Happy-hour-logo-sans-fond.png"/>
 
                 
                  <TextField 

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: stretch;
     height: 100vh;
+    flex-wrap: wrap;
 }
 
 .login-image{
@@ -26,6 +27,12 @@ form {
     align-items: center;
 }
 
+.logo-login {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 6rem;
+}
+
 /* .MuiInputBase-input  {
     background: white;
     
@@ -34,4 +41,16 @@ form {
   .MuiTextField-root {
     background: white;
     border-radius: 6px
+  }
+
+  /* For cellphones, the image will be completely removed and the login screen fully displayed */
+
+  @media (max-width: 480px) {
+    form {
+      flex: 0 0 100%;
+    }
+
+    .login-image {
+      display: none;
+    }
   }
