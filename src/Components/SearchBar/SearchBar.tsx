@@ -8,8 +8,6 @@ export default function SearchBar() {
     const { fetchDrinkSearch } = useContext(DrinkContext)
     const [searchInput, setSearchInput] = useState("");
 
-/****************************************************************************************/
-
     const handleSearch = () => {
         fetchDrinkSearch(searchInput);
     };
@@ -20,15 +18,13 @@ export default function SearchBar() {
         }
     };
 
-/****************************************************************************************/
-
     return (
-        <div>
-            <input type="text" placeholder="Search"
+        <div className = "search-bar-container">
+            <input className = "search-bar-input" type="text" placeholder="Search"
                 onChange={(event) => setSearchInput(event.target.value)}
                 onKeyDown={handleKeyDown}>
             </input>
-            <button onClick={handleSearch}>Search</button>
+            <button className = "search-bar-button" onClick={handleSearch}>Search</button>
         </div>
     )
 }
