@@ -16,7 +16,7 @@
 }
 
 form {
-    /* This color will be taken by default if the browser does not support gradients */
+    /* The background-color feature be taken by default if the browser does not support gradients */
     background-color: #e79d1d;
     background-image: linear-gradient(to bottom right, red, yellow);
     flex: 0 0 40%;
@@ -32,18 +32,13 @@ form {
     max-width: 300px;
     margin-bottom: 6rem;
 }
-
-/* .MuiInputBase-input  {
-    background: white;
-    
-  } */
   
   .MuiTextField-root {
     background: white;
     border-radius: 6px
   }
 
-  /* For cellphones, the image will be completely removed and the login screen fully displayed */
+  /* For cellphones, the image will be completely removed and the login screen will be fully displayed */
 
   @media (max-width: 480px) {
     form {

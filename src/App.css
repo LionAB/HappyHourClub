@@ -20,9 +20,9 @@
 .card-layout {
   display: flex;
   margin-left: 5rem;
+  margin-right: 0;
   /* Put a card in the next row when previous cards take all width */
   flex-wrap: wrap;
-  gap:10px;
  
 
 }

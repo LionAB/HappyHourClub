@@ -24,7 +24,7 @@ export default function CocktailCard(props: {drink: Drinks | null}){
                 <img src={drink?.image}/>
             </div>
             <div className="cocktail-card-title">
-                <h1 className='text-4xl'>{drink?.title}</h1>
+                <h1 className='cocktail-name'>{drink?.title}</h1>
             </div>
         </div>
     )
