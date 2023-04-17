@@ -20,7 +20,7 @@ export default function CocktailCard(props: {drink: Drinks | null}){
 
     return(
         <div key={drink?.id} className="card-container card-layout__item " onClick={()=>handleDrinkClick(drink?.id)}>
-            <div className="card-image">
+            <div className="card-image-container">
                 <img src={drink?.image}/>
             </div>
             <div className="cocktail-card-title">
