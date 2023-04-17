@@ -8,9 +8,17 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 1.5rem;
+    cursor: pointer;
 }
 
-.card-image {
+.card-container:hover {
+    box-shadow: 0px 0px 15px 0px;
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+
+}
+
+.card-image-container {
     width: 100%;
     overflow: hidden;
 }
