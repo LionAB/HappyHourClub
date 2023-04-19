@@ -6,10 +6,9 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
         const { recipe } = props;
 
     return(
-        <Box sx={{ flexGrow: 1,
-            height:'100%',
-            bgcolor: 'background.default',
-            color: 'text.primary',
+        <Box sx={{ 
+            bgcolor: 'primary.main',
+            color: 'text.secondary',
             marginLeft:'3.5rem'}}>
                 
             <div id="recipe" className="mr-10">
@@ -21,6 +20,7 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
                 }} justifyContent="space-between" flexWrap="wrap-reverse" >
                     <Grid item xs={12} md={7}>
                         <Box className="" sx={{
+                            
                             height: '90vh',
                             width: '100%',
                             display: 'flex',
@@ -57,13 +57,14 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
                             flexDirection: 'column',         
                         }}
                         >
-                            <h1 className=" mt-16"><b>{recipe?.title}</b></h1>
+                            <h1 className=" mt-16 "><b>{recipe?.title}</b></h1>
                             <h3><b>Category : {recipe?.category}</b> </h3>
                             
                             <Box className="mx-auto mt-16" sx={{
-                                height: '50%',               
+                                height: '50%',   
+                      
                             }}>
-                                <img className="w-auto h-[100%] rounded-4xl" src={recipe?.image}/>
+                                <img className="max-w-md w-[100%] rounded-4xl" src={recipe?.image}/>
                             </Box>
                             
                             </Paper>

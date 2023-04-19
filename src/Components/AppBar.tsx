@@ -163,7 +163,7 @@ export default function MiniDrawer() {
     <Box sx={{ display: 'flex' }}>
       
 
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" sx={{bgcolor:'primary.main'}} open={open}>
         <DrawerHeader>
          {/*  <IconButton
             size="large"

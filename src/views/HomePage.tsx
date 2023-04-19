@@ -74,10 +74,12 @@ export default function HomePage() {
       }, [drinks]);
 
     return (
-        <Box id="home" sx={{
-          bgcolor: 'background.default',
-          color: 'text.primary',
+
+        <Box id="home" sx={{ 
+          bgcolor: 'primary.main',
+          color: 'text.secondary',
           marginLeft:'3.5rem',
+          paddingBottom:'2rem',
         }}>
           <div className="wrapper">
             <img className="logo-home" src="../src/assets/images/Happy-hour-logo-sans-fond.png"/>
@@ -111,5 +113,6 @@ export default function HomePage() {
             )}
             
         </Box>
+      
     );
 }

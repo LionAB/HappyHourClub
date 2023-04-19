@@ -31,8 +31,10 @@ export const ColorModeContextProvider = ({children}: IColorModeContextProviderPr
           createTheme({
             palette: {
               mode,
-              primary: {main: '#f44336'},
-                secondary: {main: '#242424'},
+              ...(mode === 'light' ? {primary: {main: '#f5f2e9'},
+                secondary: {main: '#292929'}}:{primary: {main: '#292929'},
+                secondary: {main: '#f5f2e9'}})
+              
             },
           }),
         [mode],
