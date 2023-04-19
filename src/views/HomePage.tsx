@@ -49,9 +49,12 @@ export default function HomePage() {
         <Box id="home" sx={{
           bgcolor: 'background.default',
           color: 'text.primary',
+          marginLeft:'3.5rem',
         }}>
-            <h1 className="text-3xl text-sky-400 font-bold underline">Home Page</h1>
-          
+          <div className="wrapper">
+            <img className="logo-home" src="../src/assets/images/Happy-hour-logo-sans-fond.png"/>
+          </div>
+            
             <SearchBar/>
             
             {drinks.length===0 ? (

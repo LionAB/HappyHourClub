@@ -7,11 +7,15 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
 
     return(
         <Box sx={{ flexGrow: 1,
-            paddingTop:'2rem',
-            minWidth:'95vw',
+            height:'100%',
             bgcolor: 'background.default',
-            color: 'text.primary',}}>
-            <div id="recipe" className="mx-10">
+            color: 'text.primary',
+            marginLeft:'3.5rem'}}>
+                
+            <div id="recipe" className="mr-10">
+            <div className="wrapper">
+            <img className="logo-home" src="../src/assets/images/Happy-hour-logo-sans-fond.png"/>
+          </div>
                 <Grid container spacing={2} columns={12} sx={{
                     marginLeft:'auto',
                 }} justifyContent="space-between" flexWrap="wrap-reverse" >
@@ -25,7 +29,7 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
                           
                         }}>
                             <h2 className="pl-6 text-4xl text-left">Informations</h2>
-                            <Paper elevation={3} className=" text-left" sx={{height:'45%',padding:'1rem',margin:'1rem',overflow: "hidden",overflowY: "scroll",backgroundColor:'#f7e4c3'}}>
+                            <Paper elevation={3} className=" text-left" sx={{height:'45%',padding:'1rem',margin:'1rem',overflow: "hidden",overflowY: "scroll"}}>
                 <h3><b>Glass</b></h3>
                 {recipe?.glass}
                 <h3 className="mt-1 text-left"><b>Ingredients</b></h3>
