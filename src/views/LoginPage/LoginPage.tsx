@@ -48,7 +48,7 @@ export default function LoginPage() {
                     onChange={e => setUsername(e.target.value)}
                     required
                     variant="outlined"
-                    color="secondary"
+                    color="primary"
                     type="name"
                     value={username}
                     error={usernameError}
@@ -60,7 +60,7 @@ export default function LoginPage() {
                     onChange={e => setEmail(e.target.value)}
                     required
                     variant="outlined"
-                    color="secondary"
+                    color="primary"
                     type="email"
                     sx={{mb: 3}}
                     fullWidth

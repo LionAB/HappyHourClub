@@ -14,7 +14,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeIcon from '@mui/icons-material/Home';
-import { LocalBar } from "@mui/icons-material";
+import { BrightnessMedium, LocalBar } from "@mui/icons-material";
 import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import CoffeeIcon from '@mui/icons-material/Coffee';
@@ -23,7 +23,10 @@ import ShakerIcon from "../assets/Icons/ShakerIcon";
 import UserContext from "../hooks/Context/UserContext";
 import DrinkContext from "../hooks/Context/DrinkContext";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import { ColorModeContext } from "../theme/ColorModeContext";
+//import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -96,7 +99,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MiniDrawer() {
-  const theme = useTheme();
+  const { mode, toggleColorMode} = useContext(ColorModeContext);
   const [open, setOpen] = React.useState(false);
   const {logout} = useContext(UserContext);
   const navigate= useNavigate();
@@ -108,6 +111,9 @@ export default function MiniDrawer() {
   const {fetchPunch} = useContext(DrinkContext);
   const {fetchShaker} = useContext(DrinkContext);
 
+  const handletoggleColorMode=()=>{
+    toggleColorMode();
+  }
   const handleDrawerToggle = () => {
     if (open) {
       setOpen(false);
@@ -159,6 +165,16 @@ export default function MiniDrawer() {
 
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
+         {/*  <IconButton
+            size="large"
+            edge="start"
+            color="default"
+            aria-label="menu"
+            onClick={handletoggleColorMode}
+            sx={{ mx: 2 }}
+            >
+            {mode === "dark" ? <Brightness4Icon /> : <Brightness7Icon />}
+          </IconButton> */}
           <IconButton onClick={handleDrawerToggle}>
             { open==true ?   <ChevronLeftIcon/> : <MenuIcon/>}
           </IconButton>
@@ -184,6 +200,26 @@ export default function MiniDrawer() {
           </ListItem>
         </List>
         <Divider/>
+          <List>
+            <ListItem key="theme" disablePadding sx={{ display: 'block' }} >
+              <ListItemButton onClick={(event)=>handletoggleColorMode()} sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+              }}>
+                <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : 'auto',
+                justifyContent: 'center',
+              }}>
+                  {mode === "dark" ? <Brightness4Icon /> : <BrightnessMediumIcon />}
+                </ListItemIcon>   
+                <ListItemText primary="Theme" sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        
         <List>
         <ListItem key="cocktail" disablePadding sx={{ display: 'block' }}>
             <ListItemButton onClick={(event) => handleAlcoholic() } sx={{
@@ -292,6 +328,7 @@ export default function MiniDrawer() {
     <Divider />
         <div style={{ position: 'absolute', bottom: 10 ,width:"100%"}}>
         <Divider />
+
         <List>
           <ListItem key="Logout" disablePadding >
             <ListItemButton onClick={(event)=>handleLogout()}  sx={{

@@ -7,9 +7,14 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
 
     return(
         <Box sx={{ flexGrow: 1,
-            minWidth:'95vw'}}>
-            <div id="recipe" className="ml-11">
-                <Grid container spacing={2} columns={12} justifyContent="space-between" flexWrap="wrap-reverse" >
+            paddingTop:'2rem',
+            minWidth:'95vw',
+            bgcolor: 'background.default',
+            color: 'text.primary',}}>
+            <div id="recipe" className="mx-10">
+                <Grid container spacing={2} columns={12} sx={{
+                    marginLeft:'auto',
+                }} justifyContent="space-between" flexWrap="wrap-reverse" >
                     <Grid item xs={12} md={7}>
                         <Box className="" sx={{
                             height: '90vh',
@@ -40,30 +45,27 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
     
                     </Grid>
                     <Grid item xs={12} md={5}>
-                        <Paper className="bg-violet-600 " sx={{
-                            height: '90vh',
+                        <Box sx={{paddingTop:'1rem'}}>
+                        <Paper elevation={3} sx={{
+                            height: '85vh',
                             width: '100%',
                             display: 'flex',
-                            flexDirection: 'column',
-
-    
-                           
+                            flexDirection: 'column',         
                         }}
                         >
                             <h1 className=" mt-16"><b>{recipe?.title}</b></h1>
                             <h3><b>Category : {recipe?.category}</b> </h3>
                             
                             <Box className="mx-auto mt-16" sx={{
-                                height: '50%',
-                               
-                                
+                                height: '50%',               
                             }}>
-                                <img className="w-auto h-[450px] rounded-4xl" src={recipe?.image}/>
+                                <img className="w-auto h-[100%] rounded-4xl" src={recipe?.image}/>
                             </Box>
                             
                             </Paper>
+                        </Box>
                     </Grid>
-                    </Grid>
+                </Grid>
                     
                     </div>
                 </Box>

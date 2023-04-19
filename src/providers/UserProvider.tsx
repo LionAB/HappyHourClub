@@ -12,8 +12,20 @@ export const UserProvider: React.FC<{ children?:React.ReactElement | React.React
     const [isAuth,setIsAuth]= useState<boolean>(false);
     // On définit toutes les fonctions qui vont être utilisées dans le contexte
     const navigate= useNavigate();
+    
+    useEffect(() => {
+        const localuser = localStorage.getItem('user');
+
+       if(user===null && localuser!==null){
+          console.log('user is set by localstorage');
+            setUser(JSON.parse(localuser));
+            setIsAuth(true);
+            navigate("/");}
+        
+    },[user]);
 
     const login = async (email: string, username: string) => {
+      
       try {
         const response = await axios.get(`http://localhost:3000/users?email=${email}`);
         const data = response.data;
@@ -28,6 +40,7 @@ export const UserProvider: React.FC<{ children?:React.ReactElement | React.React
                 islogged: true
             }
             setUser(userobj);
+            localStorage.setItem('user', JSON.stringify(userobj));
             setIsAuth(true);
             console.log(user);
             navigate("/");
@@ -43,6 +56,7 @@ export const UserProvider: React.FC<{ children?:React.ReactElement | React.React
     const logout = () => {
         console.warn("logout",user);
         if(user){
+            localStorage.removeItem('user');
             setUser(null);
             setIsAuth(false);
             console.warn("logout",user);

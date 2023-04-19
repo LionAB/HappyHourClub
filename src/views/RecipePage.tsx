@@ -8,7 +8,7 @@ import DrinksRecipes from "../Models/DrinkRecipes";
 export default function RecipePage(){
     const {recipe}=useContext(RecipeContext)
     return(
-        <Recipe recipe={recipe[0]}></Recipe>
+        <Recipe  recipe={recipe[0]}></Recipe>
         
     )
 }

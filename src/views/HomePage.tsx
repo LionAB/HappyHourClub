@@ -7,6 +7,7 @@ import UserContext from "../hooks/Context/UserContext";
 import DrinkContext from "../hooks/Context/DrinkContext";
 import Drink from "../Models/Drink";
 import RecipePage from "./RecipePage";
+import { Box } from "@mui/material";
 
 export default function HomePage() {
 
@@ -45,11 +46,17 @@ export default function HomePage() {
       }, [drinks]);
 
     return (
-        <div id="home">
+        <Box id="home" sx={{
+          bgcolor: 'background.default',
+          color: 'text.primary',
+        }}>
             <h1 className="text-3xl text-sky-400 font-bold underline">Home Page</h1>
           
             <SearchBar/>
             
+            {drinks.length===0 ? (
+              <div> Pas de Drink</div>
+            ):(
             <div className="card-layout">
             {drinks?.map((mydrink)=>(
                 <CocktailCard 
@@ -58,6 +65,8 @@ export default function HomePage() {
                 />
             ))}
             </div>
-        </div>
+            )}
+            
+        </Box>
     );
 }
