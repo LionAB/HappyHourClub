@@ -11,6 +11,7 @@
     display: inline-block;
     border: none;
     box-sizing: border-box;
+    box-shadow: -2px 5px 5px gray;
 }
 
 .search-bar-button {
@@ -21,4 +22,5 @@
     border: none;
     border-radius: 0;
     cursor: pointer;
+    box-shadow: 0px 5px 5px gray;
 }

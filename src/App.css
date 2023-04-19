@@ -35,9 +35,6 @@
 }
 
 .card-layout__item {
-  /* There will be 4 cards per row */
-  
-
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
