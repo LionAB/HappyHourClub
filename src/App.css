@@ -19,6 +19,13 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.cardnodrinks-layout{
+  display: flex; 
+  margin-right: 0;
+  /* Put a card in the next row when previous cards take all width */
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .card-layout {
   display: flex; 
   margin-right: 0;
@@ -26,6 +33,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .card-layout__item {
   /* There will be 4 cards per row */
   
