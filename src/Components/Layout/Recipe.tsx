@@ -64,7 +64,7 @@ export default function Recipe(props: { recipe:DrinkRecipes | null }) {
                                 height: '50%',   
                       
                             }}>
-                                <img className="max-w-md w-[100%] rounded-4xl" src={recipe?.image}/>
+                                <img className="recipe-image max-w-md w-[100%] rounded-4xl" src={recipe?.image}/>
                             </Box>
                             
                             </Paper>

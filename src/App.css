@@ -19,6 +19,10 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.recipe-image{
+
+    border-radius: 25px;
+}
 .cardnodrinks-layout{
   display: flex; 
   margin-right: 0;

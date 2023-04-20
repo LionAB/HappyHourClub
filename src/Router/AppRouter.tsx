@@ -14,15 +14,16 @@ export default function AppRouter() {
           <Route element={<WithoutNav />}>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/404" element={<NotFoundPage/>} />
-            <Route path="*" element={<Navigate  to="/404" />} />
+            <Route path="*" element={<Navigate to="/404" />} />
           </Route>
           <Route element={<ProtectedRoutes />}>
             {/* //Si le user est connecté, on affiche le menu et certaines routes */}
               <Route element={<WithNav />}>
-                      <Route path="/404" element={<NotFoundPage/>} />
-                      <Route path="*" element={<Navigate  to="/404" />} />
-                      <Route path="/" element={<HomePage/>} />
-                      <Route path="/recipe" element={<RecipePage/>}/>
+                
+                <Route path="/" element={<HomePage/>} />
+                <Route path="/recipe" element={<RecipePage/>}/>
+                <Route path="/404" element={<NotFoundPage/>} />
+                <Route path="*" element={<Navigate  to="/404" />} />
               </Route>
           </Route>
         </Routes>

@@ -36,7 +36,6 @@ export default function CocktailCard(props:{isnodrink:boolean|undefined,drink: D
                     default:
                       break;
                   }
-                  
                   navigate("/");
             }
         }else{
@@ -53,7 +52,7 @@ export default function CocktailCard(props:{isnodrink:boolean|undefined,drink: D
        
     <div key={drink?.id}  className="card-container card-layout__item " onClick={()=>handleDrinkClick(drink?.id)}>
             <div className="card-image-container">
-                <img src={drink?.image}/>
+                <img className="card-image" src={drink?.image}/>
             </div>
             <div className="cocktail-card-title">
                 <h1 className='cocktail-name'>{drink?.title}</h1>

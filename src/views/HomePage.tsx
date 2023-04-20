@@ -49,20 +49,6 @@ export default function HomePage() {
         title: "Coffee beverages",
       }
     ]
-    // Gets the data from thecocktaildb api and adapt it to our model
-/*     useEffect(() => {
-      
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
-          .then((res) => res.json())
-          .then((data) => {
-            const drinksApiData = data.drinks.map((dataDrink: any) => ({
-              id: parseInt(dataDrink.idDrink),
-              image: dataDrink.strDrinkThumb,
-              title: dataDrink.strDrink,
-            }));
-            setDrinks(drinksApiData);
-          });
-      }, []); */
 
       useEffect(() => {
         console.warn("user :",user);
@@ -91,24 +77,24 @@ export default function HomePage() {
               <div className="nodrinks">
                 Some good sugestions to start ...
                 <div className="cardnodrinks-layout">
-                {homedrink?.map((mydrink)=>(
-                <CocktailCard 
-                  isnodrink={true}
-                  key={mydrink.id}
-                  drink={mydrink}
-                />
-            ))}
-                </div>
+                  {homedrink?.map((mydrink)=>(
+                  <CocktailCard 
+                    isnodrink={true}
+                    key={mydrink.id}
+                    drink={mydrink}
+                  />
+                    ))}
+                  </div>
               </div>
             ):(
             <div className="card-layout">
-            {drinks?.map((mydrink)=>(
-                <CocktailCard 
-                isnodrink={false}
-                key={mydrink.id}
-                drink={mydrink}
-                />
-            ))}
+              {drinks?.map((mydrink)=>(
+                  <CocktailCard 
+                  isnodrink={false}
+                  key={mydrink.id}
+                  drink={mydrink}
+                  />
+              ))}
             </div>
             )}
             

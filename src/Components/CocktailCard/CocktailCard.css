@@ -23,7 +23,7 @@
     overflow: hidden;
 }
 
-img {
+.card-image {
     border-radius: 25px;
 }
 
