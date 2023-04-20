@@ -163,18 +163,9 @@ export default function MiniDrawer() {
     <Box sx={{ display: 'flex' }}>
       
 
-      <Drawer variant="permanent" sx={{bgcolor:'primary.main'}} open={open}>
+      <Drawer variant="permanent" sx={{bgcolor:'secondary.main'}} open={open}>
         <DrawerHeader>
-         {/*  <IconButton
-            size="large"
-            edge="start"
-            color="default"
-            aria-label="menu"
-            onClick={handletoggleColorMode}
-            sx={{ mx: 2 }}
-            >
-            {mode === "dark" ? <Brightness4Icon /> : <Brightness7Icon />}
-          </IconButton> */}
+         
           <IconButton onClick={handleDrawerToggle}>
             { open==true ?   <ChevronLeftIcon/> : <MenuIcon/>}
           </IconButton>

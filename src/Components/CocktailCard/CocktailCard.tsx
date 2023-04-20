@@ -50,26 +50,17 @@ export default function CocktailCard(props:{isnodrink:boolean|undefined,drink: D
 
     return(
         //Si il n"y a pas de boisson on affiche les catégories sinon on affiche les boisson de la catégorie
-        <>
-        {isnodrink ? 
-        (<><div key={drink?.id}  className="card-container card-layout__item " onClick={()=>handleDrinkClick(drink?.id)}>
-        <div className="card-image-container">
-            <img src={drink?.image}/>
-        </div>
-        <div className="cocktail-card-title">
-            <h1 className='cocktail-name'>{drink?.title}</h1>
-        </div>
-    </div></>):
-        ( <><div key={drink?.id}  className="card-container card-layout__item " onClick={()=>handleDrinkClick(drink?.id)}>
+       
+    <div key={drink?.id}  className="card-container card-layout__item " onClick={()=>handleDrinkClick(drink?.id)}>
             <div className="card-image-container">
                 <img src={drink?.image}/>
             </div>
             <div className="cocktail-card-title">
                 <h1 className='cocktail-name'>{drink?.title}</h1>
             </div>
-        </div></>)}
+        </div>
        
-        </>
+        
     )
 }
 

@@ -12,11 +12,15 @@ Dans un autre terminal lancer le json server
 ```
 json-server --watch db.json
 ```
+###Routes 
+  -http://localhost:3000/profile
+    -http://localhost:3000/users
+
+    
 ### User Stories
 
 - En tant qu'utilisateur,je veux pouvoir me connecter à l'application
 - En tant qu'utilisateur, je veux pouvoir me déconnecter de l'application
-- En tant qu'utilisateur, je veux pouvoir créer un compte
 - En tant qu'utilisateur, je veux pouvoir rechercher des recettes de cocktails par nom / ingrédient
 - En tant qu'utilisateur, je veux pouvoir rechercher des recettes de cocktails par catégorie
 - En tant qu'utilisateur, je veux pouvoir rechercher des recettes de cocktails par alcool
@@ -28,6 +32,7 @@ json-server --watch db.json
 
 ### User Stories V2 ???
 - En tant qu'utilisateur, je veux pouvoir ajouter des recettes de cocktails à mes favoris
+- En tant qu'utilisateur, je veux pouvoir créer un compte
 
 -----------------
 
