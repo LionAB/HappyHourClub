@@ -12,15 +12,10 @@ import { Box } from "@mui/material";
 export default function HomePage() {
 
     // const [drinks,setDrinks]= useState<Drink[]|null>(null);
-    const { login } = useContext(UserContext);
+
     const { user } = useContext(UserContext);
     const { drinks } = useContext(DrinkContext);
-    const { fetchAlcoholic } = useContext(DrinkContext);
-    const { fetchNonAlcoholic } = useContext(DrinkContext);
-    const { fetchBeer } = useContext(DrinkContext);
-    const { fetchCoffee } = useContext(DrinkContext);
-    const { fetchPunch } = useContext(DrinkContext);
-    const { fetchShaker } = useContext(DrinkContext);
+  
 
     const homedrink = [
       {

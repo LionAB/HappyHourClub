@@ -1,14 +1,14 @@
-import React from 'react';
-import { useNavigate,useLocation } from 'react-router-dom';
+import  { useContext } from 'react';
+import { useNavigate} from 'react-router-dom';
+import UserContext from '../../hooks/Context/UserContext';
 
 export default function NotFound() {
     const navigate=useNavigate();
-    const location=useLocation();
+    const { isAuth } = useContext(UserContext);
     //console.warn(location);
     const isConnected=true; // a remplacer par un state global user
     const handleClick=()=>{
-        // navigate(-1); va à la page précedente
-        if(isConnected){
+        if(isAuth){
             navigate("/");
         }else{
             navigate("/login");
@@ -22,7 +22,7 @@ export default function NotFound() {
             <div className="relative">
                 <div className="absolute">
                     <div className="">
-                        {isConnected ? <button onClick={handleClick} className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">Back to Home</button> : <button onClick={handleClick} className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">Back to Login</button>}
+                        {isAuth ? <button onClick={handleClick} className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">Back to Home</button> : <button onClick={handleClick} className="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-50">Back to Login</button>}
                         
                     </div>
                 </div>

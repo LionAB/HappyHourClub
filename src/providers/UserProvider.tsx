@@ -20,7 +20,8 @@ export const UserProvider: React.FC<{ children?:React.ReactElement | React.React
           console.log('user is set by localstorage');
             setUser(JSON.parse(localuser));
             setIsAuth(true);
-            navigate("/");}
+            navigate("/");
+          }
         
     },[user]);
 

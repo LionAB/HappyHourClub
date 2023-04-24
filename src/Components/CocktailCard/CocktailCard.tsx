@@ -9,6 +9,7 @@ export default function CocktailCard(props:{isnodrink:boolean|undefined,drink: D
     const {fetchDrinkById}=useContext(RecipeContext);
     const {fetchAlcoholic,fetchBeer,fetchCoffee,fetchNonAlcoholic,fetchPunch,fetchShaker}=useContext(DrinkContext);
     const {drink,isnodrink} = props;
+    
     const navigate= useNavigate();
     const handleDrinkClick = (id:number|undefined) => {
         if (isnodrink){
@@ -54,6 +55,7 @@ export default function CocktailCard(props:{isnodrink:boolean|undefined,drink: D
             <div className="card-image-container">
                 <img className="card-image" src={drink?.image}/>
             </div>
+        
             <div className="cocktail-card-title">
                 <h1 className='cocktail-name'>{drink?.title}</h1>
             </div>
